@@ -2,11 +2,19 @@
 /325324523235
 /apriltag
 /build
-/calibrate_pictures
-/calibrate_pictures2
-/calibrate_pictures3
+/cablirate_pictures
+/cablirate_pictures2
+/cablirate_pictures3
 /imfusion
 /runs
 /slam-python
 /SLAMPy-Monocular-SLAM-implementation-in-Python
 /yolo*
+（备份）Interleaved_LLM_and_Motion_Planning_in_Scene_Graphs (3).pdf
+*.mp4
+*.avi
+*.python
+*.pdf
+*.zip
+*.pt
+*.whl
