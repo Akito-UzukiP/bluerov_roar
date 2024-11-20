@@ -142,10 +142,14 @@ while True:
             # Compute error between target position and object center position
             error = target_object_pos - object_center_y
             error_x = 1920 / 2 - object_center_x
+            gain_x = 1
+            gain = 1
+            error = gain * error
+            error_x = gain_x * error_x
             # Adjust RC channel accordingly
             #set_rc_channel_pwm(rc_channel["camera_tilt"], int(1500 + error))
-            set_rc_channel_pwm(rc_channel["pitch"], int(1500 + error))
-            set_rc_channel_pwm(rc_channel["roll"], int(1500 + error_x))
+            #set_rc_channel_pwm(rc_channel["pitch"], int(1500 + error))
+            set_rc_channel_pwm(rc_channel["yaw"], int(1500 + error_x))
             # Update progress bar
             pbar.set_description(f"Object center: ({object_center_x:.2f}, {object_center_y:.2f}), Error: {error:.2f}")
             pbar.update(1)
@@ -155,7 +159,7 @@ while True:
         # No objects detected, stop movement
         #set_rc_channel_pwm(rc_channel["camera_tilt"], 1500)
         set_rc_channel_pwm(rc_channel["pitch"], 1500)
-        set_rc_channel_pwm(rc_channel["roll"], 1500)
+        set_rc_channel_pwm(rc_channel["yaw"], 1500)
 
     # Display the image
     cv2.imshow('preview', img)
